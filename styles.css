@@ -1,0 +1,340 @@
+/* The * selector targets all elements, setting their margin and padding to 0 */
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box to ensure consistent layout across different browsers. */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #555, #333, #555, #444);
+  background-size: 400% 400%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; 
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Space between button container and contact details */
+}
+
+/* Button Container Styling */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the right */
+  gap: 20px;
+  position: relative; /* Make sure the pseudo-element can be positioned absolutely */
+  padding: 20px; /* Ensure there's padding to avoid overlap */
+}
+
+/* Button Container Title Styling */
+.button-container-title {
+  font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+  font-size: 3rem; /* Adjust font size if needed */
+  font-weight: 200; /* Delicate weight for a lighter appearance */
+  margin-bottom: 10px;
+  align-self: flex-end;
+}
+
+/* Button Styling */
+button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 0.25rem 1rem; /* Reduce the padding to make the button thinner */
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+  font-size: 1.5rem; /* Keep the font size as is */
+  font-weight: 300; /* Lighter weight for delicate appearance */
+}
+
+/* Button Hover Styling */
+button:hover {
+  background: #555;
+}
+
+
+/* Separator Line Styling */
+.separator {
+  width: 2px;
+  background-color: #777;
+  height: auto; /* Adjust height to match the height of the button container */
+  margin: 0 20px; /* Space around the separator */
+}
+
+
+.main-content {
+  display: flex;
+  align-items: stretch; /* Ensure both items have the same height */
+  gap: 20px; /* Space between button container and contact details */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the right */
+  gap: 20px;
+  padding: 20px; /* Ensure there's padding to avoid overlap */
+  height: 100%; /* Make button container take full height */
+  position: relative; /* Relative positioning for the separator */
+}
+
+/* Remove any vertical line styling from the button container */
+.button-container::after {
+  content: none; /* Remove the pseudo-element to avoid extra lines */
+}
+
+.separator {
+  width: 2px;
+  background-color: #777;
+  height: 100%; /* Make the separator span the full height */
+  margin: 0 20px; /* Space around the separator */
+}
+
+
+
+
+
+/* Add vertical line to the right of the button container */
+.button-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px; /* Width of the vertical line */
+  height: 100%; /* Make the line span the full height of the button container */
+  background-color: #777; /* Color of the vertical line */
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  font-size: 0.9rem; /* Smaller base font size */
+  padding: 20px; /* Add padding to avoid overlap */
+  font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+  font-weight: 100; /* Thinner font weight */
+  color: #fff; /* White text color for readability */
+}
+
+.contact-details p {
+  margin-bottom: 15px; /* Consistent spacing between sections */
+  line-height: 1.4; /* Ensure readability and space between lines */
+}
+
+.contact-details strong {
+  display: block;
+  font-size: 1rem; /* Adjusted font size for titles */
+  margin-bottom: 2px; /* Minimal space below the title */
+}
+
+.contact-details br {
+  display: none; /* Hide line breaks to control spacing */
+}
+
+.contact-details span {
+  display: block; /* Make descriptions appear on a new line */
+  margin-top: 2px; /* Minimal space above the description */
+}
+
+.contact-details a {
+  color: #fff; /* Set icon color */
+  text-decoration: none; /* Remove underline */
+  font-size: 0.9rem; /* Adjust size for LinkedIn text */
+}
+
+.contact-details a:hover {
+  color: #0077b5; /* Change color on hover (LinkedIn blue) */
+}
+
+
+
+
+.contact-details .social-icons {
+  display: flex; /* Display icons in a row */
+}
+
+/* Increase size specifically for LinkedIn icon */
+.contact-details .fab.fa-linkedin {
+  font-size: 3rem; /* Larger size for LinkedIn icon */
+}
+
+/* LinkedIn icon hover effect */
+.contact-details .fab.fa-linkedin:hover {
+  color: #0077b5; /* Change color on hover (LinkedIn blue) */
+}
+
+
+/* General Social Icons Styling */
+.social-icons a {
+  color: #fff; /* Set icon color */
+  text-decoration: none; /* Remove underline */
+  margin-right: 15px; /* Space between icons */
+  font-size: 2rem; /* Adjust size as needed */
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* Change color on hover (LinkedIn blue) */
+}
+
+/* Specific LinkedIn Icon Styling */
+.social-icon-linkedin {
+  font-size: 3rem; /* Larger size for LinkedIn icon */
+}
+
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem; /* Smaller font size */
+  gap: 15px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 600px; /* Adjust max width */
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px; /* Space between form elements */
+}
+
+.contact-form label {
+  font-weight: 400;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+.contact-form textarea {
+  resize: none; /* Prevent resizing */
+  height: 100px; /* Adjust height */
+}
+
+.contact-form button {
+  padding: 8px 16px; /* Smaller padding for a smaller button */
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+.contact-form button:hover {
+  background-color: #555;
+}
+
+.contact-form .back-button {
+  background: none;
+  border: none;
+  color: #0077b5;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.contact-form .back-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-form .back-button:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+/* Link Styling */
+.go-to-contact-form {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #fff; /* Link color */
+  text-decoration: none; /* Remove underline */
+  margin-top: 50px; /* Space from other elements */
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.go-to-contact-form:hover {
+  color: #0077b5; /* Change color on hover (LinkedIn blue) */
+}
+
+
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333; /* Dark background for better contrast */
+  color: #fff; /* White text color for readability */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Increased padding for more space */
+  border-top: 2px solid #555; /* Light border on top for separation */
+}
+
+/* Optional: Footer content container */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Max width for large screens */
+  margin: 0 auto; /* Center the content */
+}
+
+/* Optional: Footer logo */
+.footer-logo {
+  font-size: 1.5rem; /* Larger font size for logo */
+  font-weight: bold; /* Make it stand out */
+  color: #fff; /* Logo color */
+}
+
+/* Optional: Footer social links */
+.footer-social-links a {
+  color: #fff; /* Icon color */
+  text-decoration: none; /* Remove underline */
+  margin: 0 10px; /* Space between icons */
+  font-size: 1.5rem; /* Adjust size as needed */
+}
+
+.footer-social-links a:hover {
+  color: #0077b5; /* Change color on hover (LinkedIn blue) */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    text-align: center;
+  }
+}
