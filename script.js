@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (myButton) {
         myButton.addEventListener('click', () => {
-            alert('TBU');
+            window.location.href = 'about.html';
+            // alert('TBU');
         });
     }
 });

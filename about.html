@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Tableau Story</title>
+    <script type="module" src="https://prod-uk-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .tableau-embed-container {
+            width: 80%;
+            height: 80%;
+        }
+        tableau-viz {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="tableau-embed-container">
+        <tableau-viz id="tableau-viz" src="https://prod-uk-a.online.tableau.com/t/kanesiad781aa5cc7/views/myBook/Story" hide-tabs toolbar="bottom"></tableau-viz>
+    </div>
+</body>
+</html>
