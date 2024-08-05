@@ -314,7 +314,7 @@ footer {
 
 /* Optional: Footer logo */
 .footer-logo {
-  font-size: 1.5rem; /* Larger font size for logo */
+  font-size: 1rem; /* Larger font size for logo */
   font-weight: bold; /* Make it stand out */
   color: #fff; /* Logo color */
 }
