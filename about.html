@@ -3,6 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Looker Studio Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .looker-embed-container {
+            width: 90%;
+            height: 90%;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="looker-embed-container">
+        <iframe src="https://lookerstudio.google.com/embed/reporting/ff6e0899-3878-445d-9902-209df6e7c313/page/p_6cmj94nwjd" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    </div>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embed Tableau Story</title>
     <script type="module" src="https://prod-uk-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
     <style>
@@ -29,4 +63,4 @@
         <tableau-viz id="tableau-viz" src="https://public.tableau.com/views/test_17230203594930/Sheet1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" hide-tabs toolbar="bottom"></tableau-viz>
     </div>
 </body>
-</html>
+</html> -->
