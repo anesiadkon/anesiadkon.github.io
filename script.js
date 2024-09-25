@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Existing code for the button
-    const myButton = document.getElementById('about');
+    const myButton = document.getElementById('test');
 
     if (myButton) {
         myButton.addEventListener('click', () => {
-            window.location.href = 'about.html';
+            window.location.href = 'test.html';
             // alert('TBU');
         });
     }
