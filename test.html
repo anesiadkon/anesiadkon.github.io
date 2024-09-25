@@ -35,20 +35,25 @@
 <body>
 
     <div class="tabs">
-        <button onclick="showIframe('iframe1')">Display 1</button>
-        <button onclick="showIframe('iframe2')">Display 2</button>
+        <button onclick="showIframe('iframe1', 'https://lookerstudio.google.com/embed/reporting/a5cb10b4-f29f-4ceb-b985-b864d4872c43/page/p_0y2fome1kd')">Display 1</button>
+        <button onclick="showIframe('iframe2', 'https://lookerstudio.google.com/embed/reporting/c2aef783-20dc-4d72-9be8-434bf8c258e7/page/p_phzwc81wkd')">Display 2</button>
     </div>
 
     <div class="looker-embed-container">
-        <iframe id='iframe1' width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/a5cb10b4-f29f-4ceb-b985-b864d4872c43/page/p_0y2fome1kd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
-        <iframe id='iframe2' width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/c2aef783-20dc-4d72-9be8-434bf8c258e7/page/p_phzwc81wkd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        <iframe id='iframe1' width="600" height="450"  frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+        <iframe id='iframe2' width="600" height="450"  frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     </div>
 
     <script>
-        function showIframe(iframeId) {
+        function showIframe(iframeId, url) {
             document.getElementById('iframe1').style.display = 'none';
             document.getElementById('iframe2').style.display = 'none';
-            document.getElementById(iframeId).style.display = 'block';
+            // document.getElementById(iframeId).style.display = 'block';
+
+            // Set the src of the selected iframe to reload and show it
+            var iframe = document.getElementById(iframeId);
+            iframe.src = url;  // Reloads the iframe by setting the src
+            iframe.style.display = 'block';  // Show the iframe
         }
     </script>
 </body>
