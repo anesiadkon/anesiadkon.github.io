@@ -3,33 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact — Konstantinos Anesiadis</title>
+    <meta name="description" content="Get in touch with Konstantinos Anesiadis by email or on LinkedIn.">
+    <link rel="canonical" href="https://anesiadkon.github.io/contact.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact — Konstantinos Anesiadis">
+    <meta property="og:description" content="Get in touch with Konstantinos Anesiadis by email or on LinkedIn.">
+    <meta property="og:url" content="https://anesiadkon.github.io/contact.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <!-- Header content (if any) goes here -->
-    </header>
     <main>
-        <div class="contact-form">
-            <h3>Contact Form [Not Working]</h3>
-            <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-            <button class="back-button"><a href="index.html">Back to Home</a></button>
+        <div class="contact-card">
+            <h1>Get in touch</h1>
+            <p>The quickest way to reach me is by email, or via LinkedIn.</p>
+            <div class="contact-methods">
+                <a class="contact-method" href="mailto:anesiadkon@gmail.com">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m2 7 10 6 10-6"/>
+                    </svg>
+                    anesiadkon@gmail.com
+                </a>
+                <a class="contact-method" href="https://www.linkedin.com/in/konstantinos-anesiadis/" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" aria-hidden="true" focusable="false">
+                        <path d="M4 0h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4Zm1.2 9.6h3.3v9.2H5.2Zm1.65-4.7a1.95 1.95 0 1 0 0 3.9 1.95 1.95 0 0 0 0-3.9Zm3.65 4.7h3.23v1.26h.05c.45-.85 1.55-1.75 3.19-1.75 3.41 0 4.03 2.24 4.03 5.15v4.54h-3.37v-4.02c0-.96-.02-2.19-1.34-2.19-1.34 0-1.54 1.04-1.54 2.12v4.09H10.5Z"/>
+                    </svg>
+                    linkedin.com/in/konstantinos-anesiadis
+                </a>
+            </div>
+            <a class="back-link" href="index.html">&larr; Back to home</a>
         </div>
-                                
     </main>
     <footer>
-        <p>&copy; 2024 Konstantinos Anesiadis</p>
+        <p>&copy; 2026 Konstantinos Anesiadis</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>

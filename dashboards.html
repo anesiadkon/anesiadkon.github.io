@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboards — Konstantinos Anesiadis</title>
+    <meta name="description" content="Interactive Looker Studio dashboards by Konstantinos Anesiadis.">
+    <link rel="canonical" href="https://anesiadkon.github.io/dashboards.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="dashboard">
+        <div class="dashboard-header">
+            <div class="tabs" role="tablist" aria-label="Dashboards">
+                <button type="button" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Display 1</button>
+                <button type="button" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">Display 2</button>
+            </div>
+            <a class="back-link" href="index.html">&larr; Back to home</a>
+        </div>
+
+        <div class="looker-embed-container">
+            <div role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+                <iframe
+                    title="Display 1"
+                    src="https://lookerstudio.google.com/embed/reporting/c628466f-7182-4dd0-9fa9-ef4b00ae73ef/page/p_boslueiskd"
+                    allowfullscreen
+                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+            </div>
+            <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+                <iframe
+                    title="Display 2"
+                    data-src="https://lookerstudio.google.com/embed/reporting/c2aef783-20dc-4d72-9be8-434bf8c258e7/page/p_phzwc81wkd"
+                    allowfullscreen
+                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        (() => {
+            const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+
+            const select = (tab) => {
+                tabs.forEach((other) => {
+                    const panel = document.getElementById(other.getAttribute('aria-controls'));
+                    const selected = other === tab;
+
+                    other.setAttribute('aria-selected', String(selected));
+                    panel.hidden = !selected;
+
+                    // Each iframe loads on first reveal and then stays loaded, so
+                    // switching tabs no longer re-fetches the report every time.
+                    if (selected) {
+                        const iframe = panel.querySelector('iframe');
+                        if (!iframe.src && iframe.dataset.src) {
+                            iframe.src = iframe.dataset.src;
+                        }
+                    }
+                });
+            };
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => select(tab));
+
+                tab.addEventListener('keydown', (event) => {
+                    const offset = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+                    if (!offset) return;
+
+                    event.preventDefault();
+                    const next = tabs[(index + offset + tabs.length) % tabs.length];
+                    next.focus();
+                    select(next);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
